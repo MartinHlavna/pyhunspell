@@ -33,7 +33,8 @@ For linux, library expects hunspell library installation in ```/usr/include/huns
 ## OSX
 For OSX, library expects hunspell library installation in ```/usr/local/include/hunspell```
 
-For OSX the version of the lib used to compile is hardcoded. If your installation fails, please try to clone the repo and change `main_module_kwargs['include_dirs']` in `setup.py` to the correct one and/or open an issue stating the problem and the hunspell version with the `.h` location in your system.
+## Windows
+For Windows, library uses bundled hunspell
 
 For windows7 [@tallforasmurf](https://github.com/tallforasmurf) compiled a python 3.4 compatible version of the pyhunspell==0.3.3 package available here: http://pyhunspell.latinier.fr
 (Warning: Those windows compiled packages are not reviewed or tested). It could work for other windows version or python versions.
