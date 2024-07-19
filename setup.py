@@ -33,7 +33,7 @@ if platform.system() == "Windows":
     path_prefix = os.path.dirname(__file__)
     hunspell_dir = os.path.join(path_prefix, 'bundled', 'windows', 'hunspell')
     main_module_kwargs['define_macros'] = [('HUNSPELL_STATIC', None)]
-    main_module_kwargs['libraries'] = ['libhunspell']
+    main_module_kwargs['libraries'] = ['libhunspell-1.7.0']
     main_module_kwargs['include_dirs'] = [os.path.join(hunspell_dir, 'include', 'hunspell')]
     main_module_kwargs['library_dirs'] = [os.path.join(hunspell_dir, 'lib')]
     main_module_kwargs['extra_compile_args'] = ['/MD']
