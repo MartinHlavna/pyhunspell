@@ -44,9 +44,7 @@ class build_ext_mingw(_build_ext):
         os.environ['CC'] = 'gcc'
         os.environ['CXX'] = 'g++'
         if platform.system() == "Windows":
-            self.compiler.set_executable("compiler_so", "g++")
-            self.compiler.set_executable("compiler_cxx", "g++")
-            self.compiler.set_executable("linker_so", "g++")
+            self.compiler = "mingw32"
             mingw_path = find_mingw()
             if not mingw_path:
                 raise RuntimeError("MinGW path not found. Please install MinGW and add it to your PATH.")
