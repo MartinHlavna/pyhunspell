@@ -32,8 +32,8 @@ main_module_kwargs = {"sources": ['hunspell.cpp'],
 if platform.system() == "Windows":
     main_module_kwargs['define_macros'] = [('HUNSPELL_STATIC', None)]
     main_module_kwargs['libraries'] = ['libhunspell']
-    main_module_kwargs['include_dirs'] = ['bundled/windows/hunspell/include']
-    main_module_kwargs['library_dirs'] = ['bundled/windows/hunspell/lib']
+    main_module_kwargs['include_dirs'] = ['bundled\\windows\\hunspell\\include']
+    main_module_kwargs['library_dirs'] = ['bundled\\windows\\hunspell\\lib']
     main_module_kwargs['extra_compile_args'] = ['/MD']
 elif platform.system() == "Darwin":
     main_module_kwargs['define_macros'] = [('_LINUX', None)]
