@@ -40,6 +40,9 @@ def find_mingw():
 
 class build_ext_mingw(_build_ext):
     def build_extensions(self):
+        # Set the MinGW compiler and linker
+        os.environ['CC'] = 'gcc'
+        os.environ['CXX'] = 'g++'
         if platform.system() == "Windows":
             mingw_path = find_mingw()
             if not mingw_path:
