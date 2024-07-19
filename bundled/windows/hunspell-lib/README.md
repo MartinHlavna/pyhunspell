@@ -1,1 +1,1 @@
-To generate 
+Copy script to bin folder and run next to libhunspell dll file
