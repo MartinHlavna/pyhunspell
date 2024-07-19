@@ -40,17 +40,18 @@ def find_mingw():
 
 class build_ext_mingw(_build_ext):
     def build_extensions(self):
-        mingw_path = find_mingw()
-        if not mingw_path:
-            raise RuntimeError("MinGW path not found. Please install MinGW and add it to your PATH.")
+        if platform.system() == "Windows":
+            mingw_path = find_mingw()
+            if not mingw_path:
+                raise RuntimeError("MinGW path not found. Please install MinGW and add it to your PATH.")
 
-        # Set the MinGW compiler and linker
-        os.environ['CC'] = 'gcc'
-        os.environ['CXX'] = 'g++'
+            # Set the MinGW compiler and linker
+            os.environ['CC'] = 'gcc'
+            os.environ['CXX'] = 'g++'
 
-        for ext in self.extensions:
-            ext.extra_compile_args = ['-static-libgcc', '-static-libstdc++']
-            ext.extra_link_args = ['-static-libgcc', '-static-libstdc++']
+            for ext in self.extensions:
+                ext.extra_compile_args = ['-static-libgcc', '-static-libstdc++']
+                ext.extra_link_args = ['-static-libgcc', '-static-libstdc++']
 
         super().build_extensions()
 
