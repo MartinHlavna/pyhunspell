@@ -38,7 +38,7 @@ if platform.system() == "Windows":
     main_module_kwargs['define_macros'] = [('HUNSPELL_STATIC', None)]
     main_module_kwargs['libraries'] = ['libhunspell']
     main_module_kwargs['include_dirs'] = [os.path.join(hunspell_dir, 'include', 'hunspell')]
-    main_module_kwargs['library_dirs'] = [os.path.join(hunspell_dir, 'lib'), os.path.join(bundled_dir, 'hunspell-lib')]
+    main_module_kwargs['library_dirs'] = [os.path.join(hunspell_dir, 'lib'), os.path.join(hunspell_dir, 'bin')]
     main_module_kwargs['extra_compile_args'] = ['/MD']
     print(f"Include dirs: {main_module_kwargs['include_dirs']}")
 elif platform.system() == "Darwin":
