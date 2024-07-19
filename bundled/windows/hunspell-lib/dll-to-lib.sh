@@ -4,7 +4,7 @@ VERSION="1.7"
 # Paths to the files
 DLL_PATH="libhunspell-$VERSION-0.dll"
 DEF_PATH="libhunspell-$VERSION-0.def"
-LIB_PATH="libhunspell-$VERSION-0.lib"
+LIB_PATH="libhunspell.lib"
 
 # Check if files exist
 if [ ! -f "$DLL_PATH" ]; then
