@@ -45,8 +45,8 @@ class build_ext_mingw(_build_ext):
             raise RuntimeError("MinGW path not found. Please install MinGW and add it to your PATH.")
 
         # Set the MinGW compiler and linker
-        os.environ['CC'] = os.path.join(mingw_path, 'gcc')
-        os.environ['CXX'] = os.path.join(mingw_path, 'g++')
+        os.environ['CC'] = 'gcc'
+        os.environ['CXX'] = 'g++'
 
         for ext in self.extensions:
             ext.extra_compile_args = ['-static-libgcc', '-static-libstdc++']
